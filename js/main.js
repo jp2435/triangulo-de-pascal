@@ -14,3 +14,17 @@ function tpascal(){
         console.log(funcoes.combinacoes(quan,3))
     }
 }
+
+function inicialModal(modalID){
+    const modal = document.getElementById(modalID)
+    if(modal){
+        modal.classList.add('mostrar');
+        modal.addEventListener('click', (evento) => {
+            if(evento.target.id == modalID || evento.target.className == 'fechar'){
+                modal.classList.remove('mostrar')
+            }
+        })
+    }
+}
+const button_modal = document.getElementById('teste-modal')
+button_modal.addEventListener("click", () => inicialModal('modal-resultado'))
