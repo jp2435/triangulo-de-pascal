@@ -5,7 +5,15 @@ function fatorial(a){
     return a
 }
 function combinacoes(a,b){
-    const combinacao = (fatorial(a))/(fatorial(a-b)*fatorial(b));
+    let combinacao = (fatorial(a))/(fatorial(a-b)*fatorial(b));
+    if(!Number.isInteger(combinacao)){ //Caso o valor tenha casa decimais, ira sofrer um tratamento
+        const decimal = combinacao - Math.trunc(combinacao)
+        if(decimal>0.1){
+            combinacao = Math.trunc(combinacao) + 1
+        }else if(decimal<0.1){
+            combinacao = Math.trunc(combinacao)
+        }
+    }
     return combinacao;
 }
 
