@@ -54,6 +54,15 @@ body{
     justify-content: center;
     align-items: center;
 }
+#modal-erro .modal{
+    border: 3px solid white;
+    background: rgba(226, 55, 43, 0.822);
+    font-size: 20px;
+    box-shadow: 0;
+}
+#modal-erro .fechar{
+    background: rgba(226, 55, 43, 0.90)
+}
 .modal-container.mostrar{
     display:flex;
 }

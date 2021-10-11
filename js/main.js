@@ -8,6 +8,7 @@ function tpascal(){
     const quan = quantidaden.value
     if(quan.length == 0){
         console.log('Erro')
+        inicialModal('modal-erro')
     }else{
         console.log(quan)
         console.log(funcoes.fatorial(quan))
@@ -27,4 +28,4 @@ function inicialModal(modalID){
     }
 }
 const button_modal = document.getElementById('teste-modal')
-button_modal.addEventListener("click", () => inicialModal('modal-resultado'))
+button_modal.addEventListener("click", () => inicialModal('modal-erro'))
