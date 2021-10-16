@@ -1,8 +1,12 @@
 function fatorial(a){
-    for(let b=a-1; b>1; b--){
-        a*=b;
+    if(a==0){
+        return a+1
+    }else{
+        for(let b=a-1; b>1; b--){
+            a*=b;
+        }
+        return a
     }
-    return a
 }
 function combinacoes(a,b){
     let combinacao = (fatorial(a))/(fatorial(a-b)*fatorial(b));

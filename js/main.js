@@ -15,10 +15,15 @@ function tpascal(){
         for(let i=0; i<=quan; i++){
             if(document.getElementById(`linha-${i}`) == null){
                 let span = document.createElement("span")
+                let br = document.createElement("br")
                 span.setAttribute("id", `linha-${i}`)
                 span.setAttribute("class", "linhas")
+                br.setAttribute("class", "linhas-br")
                 div_resultado.append(span)
+                div_resultado.append(br)
             }
+            document.getElementById(`linha-${i}`).appendChild(document.createTextNode(`Numero i: ${i}`))
+            console.log(funcoes.combinacoes(i,1))
         }
     }
 }
@@ -32,6 +37,7 @@ function inicialModal(modalID){
                 modal.classList.remove('mostrar')
                 for(let i = document.getElementsByClassName('linhas').length-1; i>=0;i--){
                     document.getElementsByClassName('linhas')[i].remove()
+                    document.getElementsByClassName('linhas-br')[i].remove()
                 }
             }
         })
