@@ -7,8 +7,7 @@ let div_resultado = document.getElementById('div-resultado')
 function tpascal(){
     const quantidaden = document.getElementById('quantidade')
     const quan = quantidaden.value
-    if(quan.length == 0){
-        console.log('Erro')
+    if(quan.length <= 0){
         inicialModal('modal-erro')
     }else{
         inicialModal('modal-resultado')
@@ -22,8 +21,16 @@ function tpascal(){
                 div_resultado.append(span)
                 div_resultado.append(br)
             }
-            document.getElementById(`linha-${i}`).appendChild(document.createTextNode(`Numero i: ${i}`))
-            console.log(funcoes.combinacoes(i,1))
+            let contagem = 0
+            while(contagem <= i){
+                if(contagem == 0){
+                    let texto_span = document.createTextNode(`${funcoes.combinacoes(1,1)}`)
+                    document.getElementById(`linha-${i}`).appendChild(texto_span)
+                }else if(contagem != 0){
+                    document.getElementById(`linha-${i}`).innerHTML += ` ${funcoes.combinacoes(i,contagem)}`
+                }
+                contagem += 1
+            }
         }
     }
 }
